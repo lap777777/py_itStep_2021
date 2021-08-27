@@ -3,7 +3,7 @@ print("1_________________________________________________")
 # You have a text file. Create a new file and remove all bad words from it. The list of bad words is in another file. 
 
 # 1 slovo jeden radek
-with open("12_Lekce_zzzpodklady/02task1.txt", encoding="utf-8") as f1, open("12_Lekce_zzzpodklady/02badwords.txt", encoding="utf-8") as f2, open("12_Lekce_zzzpodklady/02task1_reseni.txt", "w", encoding="utf-8") as f3:
+with open("12_Lekce_zzz/task1_zadani.txt", encoding="utf-8") as f1, open("12_Lekce_zzz/badwords.txt", encoding="utf-8") as f2, open("12_Lekce_zzz/task1_reseni.txt", "w", encoding="utf-8") as f3:
     bad_words = []
     for line in f2:
         bad_words.append(line.rstrip("\n"))
@@ -14,10 +14,11 @@ with open("12_Lekce_zzzpodklady/02task1.txt", encoding="utf-8") as f1, open("12_
     print(my_list)
     for i in my_list:
         if i not in bad_words:
+            print(i)
             f3.write(i+"\n")
 
 # text souvisly
-with open("12_Lekce_zzzpodklady/02task1b.txt", encoding="utf-8") as f1, open("12_Lekce_zzzpodklady/02badwords.txt", encoding="utf-8") as f2, open("12_Lekce_zzzpodklady/02task1_resenib.txt", "w", encoding="utf-8") as f3:
+with open("12_Lekce_zzz/task1_zadanib.txt", encoding="utf-8") as f1, open("12_Lekce_zzz/badwords.txt", encoding="utf-8") as f2, open("12_Lekce_zzz/task1_resenib.txt", "w", encoding="utf-8") as f3:
     bad_words = []
     for line in f2:
         bad_words.append(line.rstrip("\n"))
@@ -28,29 +29,34 @@ with open("12_Lekce_zzzpodklady/02task1b.txt", encoding="utf-8") as f1, open("12
         my_list.append(line.rstrip("\n"))
     for i in my_list:
         if i not in bad_words:
+            print(i)
             f3.write(i+" ")
 
 print("2_________________________________________________")
 # Task 2
 # Write a Russian-English transliteration program. Data for transliteration are taken from a file and written to another file. The direction is chosen by the user through a menu.
 
-# input: zada se smer prekladu - CZ -> EN nebo EN->CZ
-# input: zada se slovo na preklad
-# output: prelozene slovo
-# podle smeru vezmu prvni file, podivam se, jestli je tam hledane slovo - pokud je pokracuji, pokud ne, hlaska
-# pak vezmu druhy file a divam, se, jestli je tam dane slovo, pokud ano, tak ho ulozim do promenne a pak vytisknu
+# z jednoho souboru prehazuji do druheho, vyuzit 3 soubor kde je slovnik
 
+my_dict = {"apple": "jablko", "pear": "hruška", "plum": "švestka", "table": "stůl", "table": "stůl", "chair": "žídle", "carpet": "koberec", "window": "okno", "door": "dveře", "roof": "střecha", "floor": "podlaha"}
 
-# dovjka - z jednoho souboru do druheho, vyuzit 3 soubor kde je slovnik
-def translator(direction, word):
-    with open("12_Lekce_zzzpodklady/02task2_cz.txt") as f1, open("12_Lekce_zzzpodklady/02task2_en.txt") as f2:
-        if direction == 1:
-            for line in f1:
-                if line == word:
-                    rank = f1[line]
-                    print(rank)
-                if word not in f1:
-                    return f"Zadane slovo {word} neni obsazeno ve slovniku"
+def translator(direction):
+    if direction == 1:
+        my_dict1 = {value: key for key, value in my_dict.values()}
+        with open("12_Lekce_zzz/slovnik_cz.txt", encoding="utf-8") as f1, open("12_Lekce_zzz/slovnik_en.txt", "w") as f2:
+            my_list = [line.rstrip("\n") for line in f1]
+            for i in my_list:
+                f2.write(my_dict1[i])
+                print(f"{i}: {my_dict1[i]}")
+    elif direction == 2:
+        
+        with open("12_Lekce_zzz/slovnik_en.txt", encoding="utf-8") as f1, open("12_Lekce_zzz/slovnik_cz", "w", encoding="utf-8") as f2:
+            my_list = [line.rstrip("\n") for line in f1]
+            for i in my_list:
+                f2.write(my_dict[i])
+                print(f"{i}: {my_dict[i]}")
+    else:
+        return False
         
 while True:
   try:
@@ -60,23 +66,75 @@ while True:
      continue
   else:
     if direction == 1 or direction == 2:
-        word = input("Zadej slovo na preklad: ")
         break
     else:
         print("Chybne zadani, zadej 1 nebo 2")
 
-print(translator(direction, word))
+translator(direction)
 
 
 print("3_________________________________________________")
 # Task 3
 # The user enters file names until he or she enters the word “quit.” After the input completes, the program must combine the contents of all files listed by the user into one.
-
 # vytvorit si bokem soubory - podle zadani vybrat soubory a ty spojit do jednoho
 
+# my_list = ["soubor1.txt", "soubor2.txt", "soubor3.txt", "soubor4.txt", "soubor5.txt"]
+# file = ""
+# selection = []
+# while file != "quit":
+#     file = input("Zadej nazev souboru (pro ukonceni smycky napis quit): ")
+#     selection.append(file)
 
-print("4_________________________________________________")
-# Task 4
-# The user enters file names until he or she enters the word “quit.” After the input completes, the program must write characters present in all listed files to the final file (each file must contain characters).
+# for i in selection:
+#     if i in my_list:
+#         with open(f"12_Lekce_zzz/{i}", encoding="utf-8") as f1, open(f"12_Lekce_zzz/soubor_merge.txt", "a", encoding="utf-8") as f2:
+#             for line in f1:
+#                 f2.write(line)
+#             f2.write("\n")
+#     else:
+#         if i != "quit":
+#             print(f"soubor {i} neni ve vyberu souboru, vybere se dalsi soubor")
+# print("hotovo, text z vybranych souboru pridan do hlavniho souboru")
 
-# vyber jedinecnych znaku ze souboru
+
+
+# print("4_________________________________________________")
+# # Task 4
+# # The user enters file names until he or she enters the word “quit.” After the input completes, the program must write characters present in all listed files to the final file (each file must contain characters).
+# # vyber stejnych znaku ve vsech souborech
+
+# def set_creation(file):
+#     with open(file, encoding="utf-8") as f1:
+#         my_str = ""
+#         for line in f1:
+#             my_str += line.rstrip("\n")
+#     my_list = [i for i in my_str]
+#     my_set = set(my_list)
+    # return my_set
+
+# my_list = ["soubor1.txt", "soubor2.txt", "soubor3.txt", "soubor4.txt", "soubor5.txt"]
+# file = ""
+# selection = []
+# while file != "quit":
+#     file = input("Zadej nazev souboru (pro ukonceni smycky napis quit): ")
+#     selection.append(file)
+
+# set_list = []
+# for i in selection:
+#     if i in my_list:
+#         set_i = set_creation(f"12_Lekce_zzz/{i}")
+#         set_list.append(set_i)
+#     else:
+#         if i != "quit":
+#             print(f"soubor {i} neni ve vyberu souboru, vybere se dalsi soubor")
+
+# set_intersection = set_list[0]
+# for i in range(1, len(set_list)):
+#     set_intersection = set_intersection & set_list[i]
+# print(set_intersection)
+
+# with open("12_Lekce_zzz/soubor_znaky.txt", "w", encoding="utf-8") as f1:
+#     for i in set_intersection:
+#         f1.write(i + ", ")
+
+# print("hotovo, vytvoren vystup pro znaky v souboru soubor_znaky.txt")

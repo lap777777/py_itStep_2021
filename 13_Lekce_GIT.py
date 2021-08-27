@@ -120,8 +120,15 @@ dalsi nahravani davam uz jen:
 
 
 prijde novy kolega - vytvori si novy adresar a do nej si muze nakopirovat commity z jineho projektu
-# git clone https;..... adresa puvodniho projektu
-a pak musim skocit do noveho adresare, kde mam projekt
+# git clone https:..... adresa puvodniho projektu
+musim byt ve slozce, kde mi pak git vytvori podadresar se jmenem projektu a nemusim uz davat git init a propojovat, protoze mam udelano, pak staci jenom add commit a push jednoduse
+
+Takze idealni postup:
+1. zalozit si novou repozitory na GitHubu
+2. zkopirovat si code HTTPS adresu repository
+3. dat terminal a tam najet do slozky, ve ktere chci vytvorit repo u me v pocitaci
+4. dat do terminalu git clone adresa z githubu
+5. mam hotovo a muzu add, commit -m a push a vse je propojene
 
 # git pull - tim si to nahraji do puvodni slozky, kde program vzniknul pred klonovanim - stahni ke mne vsechny zmeny zezhora (z GitHubu)
 udelam si update praci kolegy
@@ -134,6 +141,7 @@ git add . pridava vsechny zmeny do staging area
 git cm (commit -m) "popisek" ukladam zmeny
 git push   nahravam na GitHub
 git pull   nahravam si update od ostatnich
+git clone https:....  vytvarim si novou slozku z githubu
 
 
 ### BRANCHES #####

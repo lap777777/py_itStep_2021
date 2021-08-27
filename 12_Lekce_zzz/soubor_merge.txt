@@ -4,3 +4,13 @@ soubor 2
 tady je neco zajimavejsiho
 soubor3
 dneska je pekne pocasi
+soubor 1
+nic zajimaveho tady neni
+x y w
+soubor3
+dneska je pekne pocasi
+x y w
+soubor 5
+a co rici zaverem
+ze uz by toho stacilo
+w

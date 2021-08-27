@@ -1,0 +1,10 @@
+apple
+pear
+house
+chair
+car
+piano
+bus
+underground
+bottle
+lamp

@@ -1,0 +1,14 @@
+jablko
+hruška
+mrkev
+paprika
+dýně
+meloun
+kedluben
+
+55
+66
+78
+95
+56
+23

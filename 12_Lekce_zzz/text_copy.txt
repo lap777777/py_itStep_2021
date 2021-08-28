@@ -1,0 +1,5 @@
+Pocet znaku: 257
+Pocet radku: 8
+Pocet samohlasek: 78
+Pocet souhlasek: 179
+Pocet cisel: 14

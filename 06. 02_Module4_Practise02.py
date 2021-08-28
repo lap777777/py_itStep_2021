@@ -10,7 +10,7 @@ print(f"Soucet je: {result}")
 print()
 
 # Task 2
-# Write a function to find the maximum in the list of inte- gers. The list is passed as a parameter.
+# Write a function to find the maximum in the list of integers. The list is passed as a parameter.
 
 def my_max(list):
     return max(list)

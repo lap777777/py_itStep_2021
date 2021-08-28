@@ -65,7 +65,6 @@ print()
 # Task 6
 # Write a function that checks if a number is prime. The number is passed as a parameter. If the number is prime, return true, otherwise false.
 def je_prvocislo(cislo):   # v nazvu je sloveso (is_prime) - cekam, ze budu vracet boolean
-    my_count = 0
     for i in range(2, cislo):
         if cislo % i == 0:
             return False

@@ -43,10 +43,12 @@ print("-----------------------------------------------------------------------")
 # Develop a game of Tic-tac-toe.
 
 
+print("-----------------------------------------------------------------------")
 # Task 5
 # Write a recursive function that takes a list of 100 random integers and finds the position at which a sequence of 10 numbers begins, and their sum must be the smallest.
 
 
+print("-----------------------------------------------------------------------")
 # Task 6
 # Write a function that takes two dates (i.e., the function takes six parameters) and calculates the difference in days between those dates. To solve this problem, you should also write a function that checks if the year is a leap year.
 

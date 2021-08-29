@@ -1,3 +1,4 @@
+print("1---------------------------------------------------------")
 # Task 1
 # You have a set containing country names. Provide the following features:
 my_set = {"CZ", "SK", "AT", "PL", "HU", "GE"}
@@ -26,8 +27,7 @@ else:
     print(f"{my_search} is not in my_set.")
 print()
 
-print("---------------------------------------------------------")
-
+print("2---------------------------------------------------------")
 # Task 2
 # You have two sets containing city names. Create a third set containing names present in both sets.
 set1 = {"Prague", "Bratislava", "Wien", "Dortmund"}
@@ -37,16 +37,12 @@ print(set3)
 set3 = set1.intersection(set2)
 print(set3)
 print("----alternativa-pomoci-listu---------------")
-set3 = []
-for i in set1:
-    if i in set2:
-        set3.append(i)
+set3 = [i for i in set1 if i in set2]
 set3 = set(set3)
 print(set3)
+print()
 
-
-print("---------------------------------------------------------")
-
+print("3---------------------------------------------------------")
 # Task 3
 # You have two sets containing city names. Create a third set containing names present in the first set but not in the second.
 set1 = {"Prague", "Bratislava", "Wien", "Dortmund"}
@@ -56,15 +52,12 @@ print(set3)
 set3 = set1.difference(set2)
 print(set3)
 print("----alternativa-pomoci-listu---------------")
-set3 = []
-for i in set1:
-    if i not in set2:
-        set3.append(i)
+set3 = [i for i in set1 if i not in set2]
 set3 = set(set3)
 print(set3)
+print()
 
-print("---------------------------------------------------------")
-
+print("4---------------------------------------------------------")
 # Task 4
 # You have two sets containing city names. Create a third set containing names present in the second set but not in the first.
 set1 = {"Prague", "Bratislava", "Wien", "Dortmund"}
@@ -74,15 +67,12 @@ print(set3)
 set3 = set2.difference(set1)
 print(set3)
 print("----alternativa-pomoci-listu---------------")
-set3 = []
-for i in set2:
-    if i not in set1:
-        set3.append(i)
+set3 = [i for i in set2 if i not in set1]
 set3 = set(set3)
 print(set3)
+print()
 
-print("---------------------------------------------------------")
-
+print("5---------------------------------------------------------")
 # Task 5
 # You have two sets containing city names. Create a third set containing names unique to each set.
 
@@ -102,8 +92,7 @@ for i in set2:
         set3.append(i)
 print(set3)
 
-print("---------------------------------------------------------")
-
+print("5---------------------------------------------------------")
 # Task 6
 # A dictionary contains a set of pairs: Country name -> Capital. Provide the possibility to add, delete, search, and replace them.
 
@@ -139,9 +128,9 @@ new_key = input("Zadej novy klic: ")
 countries[new_key] = countries.pop(old_key)
 print(countries)
 # replace b) value
-old_key = input("Zadej stat pro ktery chces zmenit hodnotu: ")
+key = input("Zadej stat pro ktery chces zmenit hodnotu: ")
 new_value = input("Zadej novou hodnotu: ")
-countries[old_key] = new_value
+countries[key] = new_value
 print(countries)
 
 print("---------------------------------------------------------")

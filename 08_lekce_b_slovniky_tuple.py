@@ -55,6 +55,7 @@ print(t4)
 prvni, druha = "ahoj", "papousek"
 print(prvni)
 print(druha)
+
 # prohozeni zapisu:
 pomocna = prvni
 prvni = druha
@@ -84,8 +85,10 @@ print(values)
 vsechno = eng_cz.items()    # vypisuji cely slovnik, ale jako seznam = lze iterovat
 print(vsechno)    
 # keys, values, items = VIEWS = neprave seznamy ... jsou zive, meni se pokud se prida klic, hodnota
+print()
 for key in eng_cz.keys():
     print(f"{key} = {eng_cz[key]}")
+print()
 # lepsi priklad
 for key, value in eng_cz.items():
     print(f"{key} = {value}")

@@ -104,6 +104,9 @@ print("4_________________________________________________")
 # vyber stejnych znaku ve vsech souborech
 
 def set_creation(file):
+    """
+    openes file and creates set which characters from text in file
+    """
     with open(file, encoding="utf-8") as f1:
         my_str = ""
         for line in f1:
@@ -112,6 +115,7 @@ def set_creation(file):
     my_set = set(my_list)
     return my_set
 
+# selection of files and adding them to list selection
 my_list = ["soubor1.txt", "soubor2.txt", "soubor3.txt", "soubor4.txt", "soubor5.txt"]
 file = ""
 selection = []
@@ -119,6 +123,7 @@ while file != "quit":
     file = input("Zadej nazev souboru (pro ukonceni smycky napis quit): ")
     selection.append(file)
 
+# for selected files is created set with characters
 set_list = []
 for i in selection:
     if i in my_list:
@@ -128,11 +133,13 @@ for i in selection:
         if i != "quit":
             print(f"soubor {i} neni ve vyberu souboru, vybere se dalsi soubor")
 
+# intersection of characters from all sets
 set_intersection = set_list[0]
 for i in range(1, len(set_list)):
     set_intersection = set_intersection & set_list[i]
 print(set_intersection)
 
+# saving of final set of charasters
 with open("12_Lekce_zzz/soubor_znaky.txt", "w", encoding="utf-8") as f1:
     for i in set_intersection:
         f1.write(i + ", ")

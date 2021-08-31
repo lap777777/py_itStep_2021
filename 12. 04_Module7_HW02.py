@@ -21,6 +21,24 @@
 # output - save found information to file (last name, age, first letter)
 # output - full list save to file - automatically when exiting the app, users command at runtime
 
+def my_upload(file):
+    """
+    upload of data from external file to dictionary
+    """
+    company = {}
+    my_count = 1
+    with open(file, encoding="utf-8") as f1:
+        for line in f1:
+            first, surname, age = line.replace(",","").rstrip("\n").split(" ")
+            employee = {
+                "first_name": first.strip(),
+                "surname": surname.strip(),
+                "age": int(age.strip())
+            }
+            company[f"id{my_count}"] = employee
+            my_count += 1
+    return company
+
 def employee_application():
     print()
     print("########################################################")
@@ -29,7 +47,7 @@ def employee_application():
     print()
     
     # otevreni souboru s daty:
-    # company = my_upload("12. employee.txt")
+    company = my_upload("12. employee.txt")
     
     # volba uzivatele - zadani vyberu
     choice = 0
@@ -150,23 +168,7 @@ def employee_application():
 
 #### Podpurne funkce  ################################################
 
-def my_upload(file):
-    """
-    upload of data from external file to dictionary
-    """
-    company = {}
-    my_count = 1
-    with open(file, encoding="utf-8") as f1:
-        for line in f1:
-            first, surname, age = line.replace(",","").rstrip("\n").split(" ")
-            employee = {
-                "first_name": first.strip(),
-                "surname": surname.strip(),
-                "age": int(age.strip())
-            }
-            company[f"id{my_count}"] = employee
-            my_count += 1
-    return company
+
 
 def user_choice():
     """
@@ -307,5 +309,5 @@ def find_letter(user_letter):
 
 ### Spusteni aplikace ################################################
 
-company = my_upload("12. employee.txt")
+# company = my_upload("12. employee.txt")
 employee_application()

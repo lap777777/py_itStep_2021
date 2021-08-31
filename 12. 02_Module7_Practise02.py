@@ -136,7 +136,7 @@ for i in selection:
 # intersection of characters from all sets
 set_intersection = set_list[0]
 for i in range(1, len(set_list)):
-    set_intersection = set_intersection & set_list[i]
+    set_intersection &= set_list[i]
 print(set_intersection)
 
 # saving of final set of charasters

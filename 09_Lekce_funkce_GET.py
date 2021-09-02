@@ -29,6 +29,7 @@ slovnik = {"kocka": 1, "pes": 1}
 slovnik.get("slon", "nic tu neni") 
 # ptam se na klic, pokud
 # klic neexistuje, tak vrati hlasku "nic tu neni" a slovnik zustane v puvodni podobe
+
 # n_days[city] = n_days.get(city, 0) + 1
 # do promenne n_days se secte puvodni hodnota + 1
 # pokud ve slovniku nic neni, tak se pricte pouze jedna pod klic city

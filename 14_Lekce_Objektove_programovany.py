@@ -67,7 +67,7 @@ class Clovek():
 
     def __repr__(self):
         # metoda pro tisk objektu - reprezentace - vypis pro vyvojare (jednoznacny)
-        # prevod objektu 
+        # repr bych mel vypsat vsechny vlastnosti dane instance/objektu
         return f"Ja jsem velky clovek\n"\
             f"A jmenuji se {self.jmeno}."
     # kdyz zavolam tisk na objektu bez metody print(karel) - 1. jde __str__, 2. jde __repr__ a az pak nejaky print ktery definuji:
@@ -82,6 +82,11 @@ print(f"Prijmeni je {karel.prijmeni}.")
 print(f"Vek je {karel.vek}.")
 print(f"Zije: {karel.kde_zije}")
 print(f"Plnolety: {karel.plnolety}.")
+print()
+
+# muzu se podivat na jednotlive atributy instance:
+print(karel.jmeno)
+print(karel.vek)
 print()
 
 aneta = Clovek("Aneta", "Fialova", 29)

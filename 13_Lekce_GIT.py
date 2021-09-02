@@ -144,6 +144,11 @@ git pull   nahravam si update od ostatnich
 git clone https:....  vytvarim si novou slozku z githubu
 
 
+oprava predchoziho commitu
+git add .    novou verzi souboru, kterou jsem chtel nahrat v minulem
+git commit --amend   uprav predchozi verzi commitu
+git push --force     natvrdo pushuj (s tim opatrne, at si neco nerozbiju, pouzit jenom tady pri te uprave predchoziho commitu)
+
 ### BRANCHES #####
 
 pro vice verzi ruzneho kodu - napr mam funci v programu, ale chci ji rozsirit pro jine programy - tak si na to zalozim novou vetev

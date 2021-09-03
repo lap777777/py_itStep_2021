@@ -20,6 +20,7 @@ class Human():
 
 karel = Human("Karel", "Novak", "IBM", "programator")
 
+karel.get_up()
 karel.go_to_town("Prahy")
 karel.go_to_work()
 

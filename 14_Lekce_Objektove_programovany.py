@@ -84,10 +84,14 @@ print(f"Zije: {karel.kde_zije}")
 print(f"Plnolety: {karel.plnolety}.")
 print()
 
+### ke vsem atributum a metodam objektu pristupuji pres . (tecku)
 # muzu se podivat na jednotlive atributy instance:
 print(karel.jmeno)
 print(karel.vek)
 print()
+# a muzu se pdodivat na metody:
+
+
 
 aneta = Clovek("Aneta", "Fialova", 29)
 

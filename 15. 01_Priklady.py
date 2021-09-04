@@ -162,6 +162,12 @@ class Bookshelf():
         else:
             return False
 
+    def is_in_bookshelf3(self, nazev):
+        for i in self.knihovna:
+            if nazev == i.title:
+                return True
+        return False
+
 kniha1 = Book("RUR", "Karel Capek", 199, 30)
 kniha2 = Book("Babicka", "Bozena Nemcova", 299, 60)
 kniha3 = Book("Kytice", "Karel Jaromir Erben", 99, 10)
@@ -184,6 +190,8 @@ je_tam = knihovna.is_in_bookshelf(kniha1)
 print(je_tam)
 je_tam2 = knihovna.is_in_bookshelf2("RUR")
 print(je_tam2)
+je_tam3 = knihovna.is_in_bookshelf3("Starec a more")
+print(je_tam3)
 print()
 
 kniha4 = Book("Maj", "Karel Hynek Macha", 99, 5)

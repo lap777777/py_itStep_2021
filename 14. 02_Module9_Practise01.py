@@ -85,19 +85,47 @@ for i in countries:
 
 print("4---------------------------------------------------------------")
 # Task 4
-# Create a class Fraction. Class fields should store the following: numerator and denominator. Implement class methods for data input and output, provide access to individual fields through class methods. Also, create class methods for arith- metic operations (add, subtract, multiply, divide, etc.).
+# Create a class Fraction. Class fields should store the following: numerator and denominator. Implement class methods for data input and output, provide access to individual fields through class methods. Also, create class methods for arithmetic operations (add, subtract, multiply, divide, etc.).
 
 class Fraction():
     def __init__(self, numerator, denumerator) -> None:
         self.n = numerator
         self.d = denumerator
-    def adding(self, n1, d1, n2, d2):
-        
-        return (self.n[0] / self.d[0]) + (self.n[1] / self.d[1]) 
-    def subtract(self, fraction1, fraction2):
-        
-        return
-    def multiply(self):
-        return
-    def divide(self):
-        return
+
+    def __str__(self):
+        return f"{self.n}/{self.d}"
+
+    def adding(self, other):
+        from fractions import Fraction
+        print("Soucet zlomku:")
+        return (Fraction(self.n, self.d) + Fraction(other.n, other.d))
+ 
+    def substract(self, other):
+        from fractions import Fraction
+        print("Rozdil zlomku:")
+        return (Fraction(self.n, self.d) - Fraction(other.n, other.d))
+
+    def multiply(self, other):
+        from fractions import Fraction
+        print("Soucin zlomku:")
+        return (Fraction(self.n, self.d) * Fraction(other.n, other.d))
+
+    def divide(self, other):
+        from fractions import Fraction
+        print("Podil zlomku:")
+        return (Fraction(self.n, self.d) / Fraction(other.n, other.d))
+
+f1 = Fraction(1, 2)
+f2 = Fraction(1, 4)
+print(f1)
+print(f2)
+print()
+adding = f1.adding(f2)
+print(adding)
+substract = f1.substract(f2)
+print(substract)
+multiply = f1.multiply(f2)
+print(multiply)
+divide = f1.divide(f2)
+print(divide)
+print()

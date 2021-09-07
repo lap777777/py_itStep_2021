@@ -1,5 +1,5 @@
 # zadani:
-# https://github.com/trohat/python1-ukoly/blob/main/OOP-1.txt
+# https://github.com/trohat/python1-kurz/tree/main/OOP1
 
 print("1--------------------------------------------------")
 # Task 1

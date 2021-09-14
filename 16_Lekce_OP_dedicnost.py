@@ -1,5 +1,7 @@
 # pocitani instanci v dane tride:
 
+# self.__class__.__name__  ... vrati jmeno tridy
+
 class Clovek:
 
     my_count = 0   
@@ -15,7 +17,7 @@ class Clovek:
     
     def __repr__(self) -> str:
         return f"Jsem {self.jmeno} {self.prijmeni}."\
-            f" Ve tride {self.__class__.__name__} {self.__class__.my_count} lide/i."
+            f" Ve tride {self.__class__.__name__} byly vytvoreni {self.__class__.my_count} lide/i."
             # tady misto Clovek.my_count taky self.__class__.my_count
 
     def vstavej(self):
@@ -95,5 +97,13 @@ pepa.programuj()
 
 print()
 
+
+"""
+
+is-a ... dedicnost pes je zvire, programator je clovek,...
+
+has-a ... kompozice/skladani = mam instanci a ta ma atributy
+
+"""
 
 

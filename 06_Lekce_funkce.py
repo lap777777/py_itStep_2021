@@ -94,3 +94,14 @@ print(transform_sentence("this is a test", tupa_funkce))
 print(transform_sentence("this is a test", dvakrat))
 print("----------------------------------------------------------")
 
+def funkce():
+    return 5
+
+a = funkce     # a prirazuji celou funkci, bude vracet objekt
+b = funkce()   # volam funkci, v b bude ulozeny vysledek - 5
+
+class Zvire:
+    pass
+
+d = Zvire()   # volam tridu - vytvori instanci
+e = Zvire     # vraci tridu / ulozil jsem objekt tridu do e

@@ -123,14 +123,12 @@ class Cage():
         self.name = name
         self.cage_list = []
 
-    def add_animal(self, animal):
-        self.cage_list.append(animal)
-        print(f"{animal.kind} uspesne pridano")
-
-    def add_animals(self, animals_list):
-        self.cage_list = [i for i in animals_list]
+    def add_animal(self, *args):
+        for i in args:
+            self.cage_list.append(i)
+        self.cage_list = [i for i in args]
         text = f"Nasledujici zvirata uspesne pridana:\n"
-        for i in animals_list:
+        for i in args:
             text += f"{i.kind}, "
         text = text.rstrip(", ")
         text += "."
@@ -148,14 +146,9 @@ class Cage():
 cage1 = Cage("Sever")
 cage2 = Cage("Zapad")
 cage3 = Cage("Jih")
-cage1.add_animal(tiger1)
-cage1.add_animal(snake1)
-cage1.add_animal(kangaroo1)
-animal_list1 = [tiger2, snake2]
-animal_list2 = [crocodile2, kangaroo2]
-cage2.add_animals(animal_list1)
-cage3.add_animals(animal_list2)
-cage3.add_animal(crocodile1)
+cage1.add_animal(tiger1, snake1, kangaroo1)
+cage2.add_animal(tiger2, snake2)
+cage3.add_animal(tiger2, snake2, crocodile1)
 print()
 # vypis dle tridy cage
 print(cage1)
@@ -247,20 +240,10 @@ class Zoo():
         text = "Zoo cointains following animals: \n"
         for i in self.zoo_list:
             for j in i.cage_list:
-                text += f'{j.kind}: {j.super().__str__().replace("Animal", "animal")}\n'
+                text += f'\t{j.kind.capitalize()}: {Animal.__str__(j).replace("Animal", "animal")}\n'
+                #text += f'{j.kind}: {super().__str__().replace("Animal", "animal")}\n'
         return text
-
-        """
-        Dotazy:
-        1) jak zavolam str metodu animal v tride zoo, kdyz tisknu str metodu u tridy Tiger
-            urcite zpusob si ji nadefinovat jako napr metodu animal_str u kazde tridy zvirete pod Animal, ale to je kopirovani
-        2) jde volat metoda str z materske tridy nejak primo v kodu - ne v definici funkci,
-            napr ze misto print(tiger) bych dal print(tiger.super().__str__())
-        3)  jak pridavat do zoo nebo do klece bud jedno nebo vice zvirat najedou, jako atributy add funkce?
-            Kdyz nevim kolik jich bude.
-            Ja nasel isinstance - kde resim pridavani, jestli to je list nebo jeden argument, ale to neresi otazku vyse.
-        """
-
+        
 zoo = Zoo()
 cage_list = [cage1, cage2]
 zoo.add_cage(cage_list)

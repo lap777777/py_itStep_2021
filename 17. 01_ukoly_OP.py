@@ -267,6 +267,7 @@ print(repr(zoo))
 print()
 
 
+# do Zoo doplnit iterovani pres zvire
 
 
 

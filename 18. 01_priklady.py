@@ -15,3 +15,13 @@
 # print(fs[2]) -> vytiskne "hruška" (normálně by opět byla KeyError)
 
 # Všechno ostatní funguje jako v běžném slovníku.
+
+
+# resit pres podtrzitokove metody __getitem__
+# apak pouzit super
+# doplnit si teorii k __setitem__
+
+class MyList(list);
+    def __getitem__(self, key):
+        print(f"Klic je {key}")
+        return "ale stejne mas smulu."

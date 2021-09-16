@@ -92,7 +92,7 @@ print()
 from collections import defaultdict
 
 # lambda as default_factory argument
-d = defaultdict(lambda: "Not present")
+d = defaultdict(lambda : 0)   # lambda vyhodi konstantu 0 tam, kde neni klic na ktery se ptam
 
 d["a"] = 1
 d["b"] = 2

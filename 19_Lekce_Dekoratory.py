@@ -18,9 +18,7 @@ pozdrav = obalovaci_funkce(pozdrav)
 # vezmu funkci pozdrav, chci aby delala neco navic (hlasky z obalovaci funkce)
 
 # dekoratory = vezmi funkci a tu jsem odekoroval nejakymi dalsimi parametry (radky 5 a 7)
-
 pozdrav()
-
 print()
 
 # je to dobre napr pro mereni casu - na zacatku si dam start a na konec si dam konec a spostu jak dlouho to trvalo

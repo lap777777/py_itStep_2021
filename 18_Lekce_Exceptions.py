@@ -65,17 +65,23 @@ try:
 except PrilosMnohoKopeckuException as e:
     print(e)
 """
-
+print("------------------------------------------------------------------------")
+print()
 
 ### Collections ####################################################
 
-# 1) Country - pocitadlo 
+# 1) Counter - pocitadlo 
 
 from collections  import Counter
+
+# pocita, co do nej vlozim - potrebuje neco, pres co se da iterovat - text, slovnik, seznam, .....
 
 c = Counter("abcdefghaaa")
 print(c)
 print()
+
+c1 = Counter("abrakadabra")["a"]  # vrati kolikrat je acko v zadanem retezci
+print(c1)
 
 cnt = Counter()
 text = "Sla nanynka do zeli, natrhala lupeni a pak sla domu a vsechno to snedla."
@@ -83,6 +89,8 @@ my_list = text.split(" ")
 for word in my_list:
     cnt[word] += 1
 print(cnt)
+print()
+print("------------------------------------------------------------------------")
 print()
 
 # 2) defaultDict
@@ -101,3 +109,74 @@ print(d)
 print(d["a"])
 print(d["b"])
 print(d["c"])
+print()
+print("------------------------------------------------------------------------")
+print()
+
+### dalsi podtrzitkove metody #######################################
+
+class Cislo():
+    def __init__(self, cislo):
+        self.cislo = cislo
+    def __add__(self, other):
+        print("Scitam: ")
+        return self.cislo + other.cislo
+    def __mul__(self, other):
+        print("bel bych nasobit, ale nechci: ")
+        return f"{self.cislo} * {other.cislo} a nevim kolik to je"
+
+c1 = Cislo(5)
+c2 = Cislo(6)
+
+try: 
+    print(c1 + c2)  
+except TypeError:
+    print("Nelze scitat dve instance.")
+print()
+
+print(c1 * c2)
+print()
+
+
+class  MyList(list):     # dedim z listu - v MyList umim vsechno co je v Pyhtonu
+    pass
+
+a = MyList()
+print(type(a))
+
+a.append(5)   # na listu je nadefinovana metoda pro pridavani, tak ji muzu vyuzit na me instanci tridy MyList
+a.append(6)
+print(a)    # na listu je nadefinovana trida str, tak ji muzu vyuzit a muzu tisknout
+a.append(8)
+a[2] = "Jablko"
+print(a[0])
+print(a)
+print()
+
+class MyList1(list):
+    def __getitem__(self, key):    
+        # metoda kdyz se ptam na dany prvek seznamu - pokud ji prepisu, mi misto prvku vraci, to cim jsem ji prepsal
+        print(f"Klic je {key}")
+        return "ale stejne mas smulu."
+    def __setitem__(self, key, value): 
+        # metoda, ktera zapisuje prvky do seznamu, ale ja jsem si ji tady prepsal
+        print(f"Klic je {key}")
+        print(f"Hodnota je {value}")
+        print("Nic nezapisu")
+        print("*******")
+        print("Tak ja to teda zapisu: ")
+        super().__setitem__(key,value)   # jak jsem si tu metodu prepsal, tak tady si to vracim zpet a taham si z rodice tu funkci
+
+b = MyList1([1, 2, 3, 4, 5, 6])
+print(b)      # tady se vola str, ten je v pohode - vytiskne seznam
+print(b[0])   # tady se vola getitem a ten nevrati prvek, protoze jsem si defaultni getitem prepsal
+print()
+b[5] = "hruska"
+print(b)
+print()
+    
+
+
+
+print("------------------------------------------------------------------------")
+print()

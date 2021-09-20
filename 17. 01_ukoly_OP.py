@@ -124,8 +124,6 @@ class Cage():
         self.cage_list = []
 
     def add_animal(self, *args):
-        for i in args:
-            self.cage_list.append(i)
         self.cage_list = [i for i in args]
         text = f"Nasledujici zvirata uspesne pridana:\n"
         for i in args:
@@ -243,6 +241,29 @@ class Zoo():
                 text += f'\t{j.kind.capitalize()}: {Animal.__str__(j).replace("Animal", "animal")}\n'
                 #text += f'{j.kind}: {super().__str__().replace("Animal", "animal")}\n'
         return text
+
+
+# do Zoo doplnit iterovani pres zvire
+    
+# class MyEnumerator():
+#     def __init__(self, string):
+#         self.string = string
+
+#     def __iter__(self):
+#         self.index = -1
+#         return self
+    
+#     def __next__(self):
+#         self.index += 1
+#         if self.index == len(self.string):
+#             raise StopIteration
+#         return f'({self.index}, {self.string[self.index]}")'
+
+# for i in MyEnumerator("chameleon"):
+#     print(i)
+# print()
+
+
         
 zoo = Zoo()
 cage_list = [cage1, cage2]
@@ -267,7 +288,6 @@ print(repr(zoo))
 print()
 
 
-# do Zoo doplnit iterovani pres zvire
 
 
 

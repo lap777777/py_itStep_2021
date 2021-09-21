@@ -10,29 +10,51 @@
 # resit pres podtrzitokove metody __getitem__
 # apak pouzit super
 
+
 class FlexibilniSlovnik(dict):
-    pass
-    # def __getitem__(self, key):
-    #     if isinstance(key, int):
-    #         super().__getitem__(key)
-    #     elif key.isalpha():
-    #         key = int(key)
-    #         if key.isdigit():
-    #             super().__getitem__(key)
-    #         else:
-    #             print("Klic nelze prevest na cislo.")
-    #     else:
-    #         print("Chybny klic, neni ve slovniku")
+    def __init__(self):
+        self.dict = {}
+
+    def add_dict(self, key, value):
+        self.dict[key] = value
+
+    def __str__(self):
+        text = "Slovnik obsahuje: \n"
+        for key, value in self.dict.items():
+            text += f"\tklic: {key}, value: {value},\n"
+        text = text.rstrip(",\n") + ".\n"
+        return text
+
+    def __getitem__(self, key):
+        if isinstance(key, int):
+            super().__getitem__(key)
+        elif key.isalpha():
+            key = int(key)
+            if isinstance(key, int):
+                super().__getitem__(key)
+            else:
+                print("Klic nelze prevest na cislo.")
+        else:
+            print("Chybny klic, neni ve slovniku")
     
-
-a = FlexibilniSlovnik({1: "a", 2: "b", 3: "c", 4: "e", 5: "f"})
+a = FlexibilniSlovnik()
+a.add_dict(1, "jablko")
+a.add_dict(2, "hruska")
+a.add_dict(3, "svestka")
+print(a.__dict__)
 print(a)
-print(f"Co je na klici 5 zadane jako cislo: {a[5]}")
-print(a[5])
 print()
+# print(a[1])
+# print(a[2])
+# print(a["1"])
+# print(a["2"])
 
+class FlexibilniSlovnik2(dict):
+    def __init__(self, dict):
+        self.dict = dict
 
-
-
+b = FlexibilniSlovnik2({1: "jablko", 2: "hruska", 3: "merunka"})
+print(b.__dict__)
+print()
 
 

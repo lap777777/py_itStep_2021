@@ -49,12 +49,29 @@ print()
 # print(a["1"])
 # print(a["2"])
 
-class FlexibilniSlovnik2(dict):
-    def __init__(self, dict):
-        self.dict = dict
+class FlexibleDict(dict):
+    def __getitem__(self, key):
+        try:
+            if key in self:
+                pass
+            elif int(key) in self:
+                key = int(key)
+            elif str(key) in self:
+                key = str(key)
+        except ValueError:
+            pass
+        return super().__getitem__(key)
+    
+b = FlexibleDict({1: "jablko", 2: "hruska", 3: "merunka"})
+b[4] = "svestka"
 
-b = FlexibilniSlovnik2({1: "jablko", 2: "hruska", 3: "merunka"})
-print(b.__dict__)
+print(b[1])
+print(b["1"])
 print()
+print(b)
+print()
+
+### jak dostat slovnik do tridy???
+
 
 

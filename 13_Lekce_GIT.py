@@ -129,6 +129,8 @@ Takze idealni postup:
 3. dat terminal a tam najet do slozky, ve ktere chci vytvorit repo u me v pocitaci
 4. dat do terminalu git clone adresa z githubu
 5. mam hotovo a muzu add, commit -m a push a vse je propojene
+6. prejmenovani hlavni vetve na main: # git branch -M main
+7. prvni push git push -u origin main
 
 # git pull - tim si to nahraji do puvodni slozky, kde program vzniknul pred klonovanim - stahni ke mne vsechny zmeny zezhora (z GitHubu)
 udelam si update praci kolegy

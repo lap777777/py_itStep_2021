@@ -107,7 +107,7 @@ def employee_application():
         returns number of employees in dictionary
         """
         number = 0
-        for key in dictionary.keys():
+        for _ in dictionary.keys():
             number += 1
         return number
 

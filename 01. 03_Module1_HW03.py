@@ -61,10 +61,10 @@ cislo1 = cislo[3] + cislo[2] + cislo[1] + cislo[0]
 print(cislo1)
 print("----matematicky------")
 cislo = int(cislo)
-prvni == cislo // 1000
-druhe == cislo % 1000 // 100
-treti == cislo % 1000 % 100 // 10
-ctvrte == cislo % 1000 % 100 % 10
+prvni = cislo // 1000
+druhe = cislo % 1000 // 100
+treti = cislo % 1000 % 100 // 10
+ctvrte = cislo % 1000 % 100 % 10
 cislo1 = ctvrte * 1000 + treti * 100 + druhe * 10 + prvni
 print(cislo1)
 print()

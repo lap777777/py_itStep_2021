@@ -1,4 +1,3 @@
-
 # operatory
 
 # + scitani, - odcitani, * nasobeni, / deleni, // deleni celym cislem, % modulo = zbytek po celociselnem deleni
@@ -20,14 +19,17 @@
 # pokud udelam cislo = int(bool(9)) ... vrati 1
 
 cislo = 5  # integer
+print(cislo)
 cislo = float(cislo)  # float
-
+print(cislo)
+print("***********************")
 print()
 print(2 + 4)
 print("ahoj", "Pavle,", "jak se mas?", sep="---")    # definice oddelovace ve funkci print
 print("Co si das", "dnes k veceri?")
 print("Nic,", "uz jsem toho mel dost", sep="???")
-print("Pojd", "uz domu", sep="\"")
+print("Pojd", "uz", "domu", sep="\"")
+print("***********************")
 print()
 
 # defaultne nastaveno sep=" ", end="\n"  - defaultne separator je mezera a na konci radku je zalomeni
@@ -42,7 +44,7 @@ different lines. Like this:
 """
 print("Task1:")
 print()
-print("Nothing \nwill work \nunless you do.")
+print("      Nothing \n      will work \n      unless you do.")
 print()
 
 # Task 2
